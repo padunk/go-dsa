@@ -2,8 +2,9 @@ package main
 
 import (
 	"fmt"
-	"go-dsa/leetcode"
 	"math"
+
+	"github.com/padunk/go-dsa/leetcode/window"
 	// "sort"
 )
 
@@ -17,8 +18,8 @@ func main() {
 	// sort.Sort(ByAge(people))
 	// fmt.Println(people)
 
-	sample := []string{"What", "must", "be", "acknowledgment", "shall", "be"}
-	complete := leetcode.FullJustify(sample, 16)
+	sample := []int{12, 28, 83, 4, 25, 26, 25, 2, 25, 25, 25, 12}
+	complete := window.GPTMinSubArrayLen(213, sample)
 	fmt.Println(complete)
 }
 
