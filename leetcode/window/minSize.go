@@ -27,27 +27,6 @@ func SortedMinSubArrayLen(target int, nums []int) int {
 	return count
 }
 
-func MinSubArrayLen(target int, nums []int) int {
-	sum := 0
-	count := math.MaxInt64
-
-	for i := 0; i < len(nums)-1; i++ {
-		sum += nums[i]
-		j := i + 1
-		for sum >= target {
-			sum += nums[j]
-			j++
-		}
-		count = min(count)
-	}
-
-	if sum != 0 {
-		return 0
-	}
-
-	return count
-}
-
 // ChatGPT
 func GPTMinSubArrayLen(target int, nums []int) int {
 	minLength := math.MaxInt64
