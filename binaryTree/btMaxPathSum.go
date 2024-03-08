@@ -4,18 +4,18 @@ import "math"
 
 func maxPathSum(root *TreeNode) int {
 	maxSum := math.MinInt32
-	_ = dfs(root, &maxSum)
+	_ = dfsMathPathSum(root, &maxSum)
 	return maxSum
 }
 
-func dfs(node *TreeNode, maxSum *int) int {
+func dfsMathPathSum(node *TreeNode, maxSum *int) int {
 	if node == nil {
 		return 0
 	}
 
 	// Recursively calculate the maximum path sum of the left and right subtrees
-	leftSum := max(0, dfs(node.Left, maxSum))
-	rightSum := max(0, dfs(node.Right, maxSum))
+	leftSum := max(0, dfsMathPathSum(node.Left, maxSum))
+	rightSum := max(0, dfsMathPathSum(node.Right, maxSum))
 
 	// Update the maximum path sum overall if necessary
 	*maxSum = max(*maxSum, leftSum+rightSum+node.Val)
